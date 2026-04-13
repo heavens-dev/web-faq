@@ -45,6 +45,7 @@ Copyright &copy; 2026 heavens-dev team
 #
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
+  { "Heaven's Gate FAQ" = "faq.md" },
   { "Canary FAQ" = "canary_faq.md" }
 ]
 
