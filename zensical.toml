@@ -287,16 +287,16 @@ logo = "assets/logo-skyblue.svg"
 # - https://zensical.org/docs/setup/colors/
 # ----------------------------------------------------------------------------
 [[project.theme.palette]]
-scheme = "slate"
-toggle.icon = "lucide/sun"
-toggle.name = "Switch to light mode"
-primary = "deep orange"
-accent = "orange"
-
-[[project.theme.palette]]
 scheme = "default"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to dark mode"
+primary = "light blue"
+accent = "cyan"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to light mode"
 primary = "deep orange"
 accent = "orange"
 

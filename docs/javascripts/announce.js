@@ -1,6 +1,58 @@
 (function () {
   var ANNOUNCE_TEXT = "Heaven's Gate Canary уже доступен!";
   var ANNOUNCE_URL = new URL('https://t.me/heavens_gate_canary_bot', window.__md_scope || window.location);
+  var CANARY_PATH_SEGMENT = '/canary_faq/';
+  var DEFAULT_PALETTE = {
+    media: 'none',
+    scheme: 'slate',
+    primary: 'light-blue',
+    accent: 'cyan',
+  };
+  var CANARY_PALETTE = {
+    media: 'none',
+    scheme: 'slate',
+    primary: 'deep-orange',
+    accent: 'orange',
+  };
+
+  function isCanaryPage() {
+    return window.location.pathname.indexOf(CANARY_PATH_SEGMENT) !== -1;
+  }
+
+  function syncPaletteRadio(palette) {
+    var selector =
+      'input.md-option[data-md-color-media="' +
+      palette.media +
+      '"][data-md-color-scheme="' +
+      palette.scheme +
+      '"][data-md-color-primary="' +
+      palette.primary +
+      '"][data-md-color-accent="' +
+      palette.accent +
+      '"]';
+    var paletteOption = document.querySelector(selector);
+    if (paletteOption) {
+      paletteOption.checked = true;
+    }
+  }
+
+  function applyPagePalette() {
+    var palette = isCanaryPage() ? CANARY_PALETTE : DEFAULT_PALETTE;
+
+    Object.keys(palette).forEach(function (key) {
+      document.body.setAttribute('data-md-color-' + key, palette[key]);
+    });
+
+    syncPaletteRadio(palette);
+
+    if (typeof window.__md_set === 'function') {
+      window.__md_set('__palette', { color: palette });
+    }
+  }
+
+  function applyPageLayoutClass() {
+    document.body.classList.toggle('hg-canary-page', isCanaryPage());
+  }
 
   function buildMarkup() {
     return (
@@ -33,9 +85,13 @@
   }
 
   function init() {
+    applyPagePalette();
+    applyPageLayoutClass();
     mountAnnouncement();
 
     var observer = new MutationObserver(function () {
+      applyPagePalette();
+      applyPageLayoutClass();
       mountAnnouncement();
     });
 
