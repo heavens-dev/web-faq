@@ -2,35 +2,36 @@
 icon: lucide/waypoints
 hide:
     - navigation
+    - footer
 ---
 
 # Heaven's Gate FAQ
 
 ## Как воспользоваться VPN?
 
-#### AmneziaWG
-    
-1. Скачай клиент Amnezia VPN с GitHub https://github.com/amnezia-vpn/amnezia-client/releases/latest (также доступно на Android и iOS), или облегчённый клиент на базе обычного WireGuard.
-- Для Windows: https://github.com/amnezia-vpn/amneziawg-windows-client/releases/latest
-- Для Android: https://github.com/amnezia-vpn/amneziawg-android/releases/latest
-2. Получи конфиг с помощью команды `/config` или через меню команды `/me`.
-3. Импортируй конфиг в клиент Amnezia
+=== "AmneziaWG"
 
-![](https://codimd.altau.su/uploads/upload_e8f8eaa164549d6ed38296d70c31063a.png)
+    1. Скачай клиент Amnezia VPN с GitHub https://github.com/amnezia-vpn/amnezia-client/releases/latest (также доступно на Android и iOS), или облегчённый клиент на базе обычного WireGuard.
+    - Для Windows: https://github.com/amnezia-vpn/amneziawg-windows-client/releases/latest
+    - Для Android: https://github.com/amnezia-vpn/amneziawg-android/releases/latest
+    2. Получи конфиг с помощью команды `/config` или через меню команды `/me`.
+    3. Импортируй конфиг в клиент Amnezia
 
-4. ???
-5. Пользуйся!
+    ![](https://codimd.altau.su/uploads/upload_e8f8eaa164549d6ed38296d70c31063a.png)
 
-#### XRay
+    4. ???
+    5. Пользуйся!
 
-1. Скачай клиент, который поддерживает подключение по VLess
-    - для Windows: [InvisibleMan-XRay](https://github.com/InvisibleManVPN/InvisibleMan-XRayClient), [NekoBox](https://github.com/MatsuriDayo/nekoray)
-    - для iOS и MacOS: [FoXray](https://apps.apple.com/ru/app/foxray/id6448898396), [Streisand](https://apps.apple.com/us/app/streisand/id6450534064)
-    - для Android: [v2RayTun](https://play.google.com/store/apps/details?id=com.v2raytun.android), [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
-    - для Linux: [NekoBox](https://github.com/MatsuriDayo/nekoray)
-    - Также можешь использовать клиент [Amnezia VPN](https://github.com/amnezia-vpn/amnezia-client/releases/latest), он поддерживает все протоколы.
-2. Скопируй ссылку формата `vless://` и вставь её в клиент. Получить её можно, как и любые другие конфиги, через команду `/configs`
-3. Пользуйся!
+=== "XRay"
+
+    1. Скачай клиент, который поддерживает подключение по VLess
+        - для Windows: [InvisibleMan-XRay](https://github.com/InvisibleManVPN/InvisibleMan-XRayClient), [NekoBox](https://github.com/MatsuriDayo/nekoray)
+        - для iOS и MacOS: [FoXray](https://apps.apple.com/ru/app/foxray/id6448898396), [Streisand](https://apps.apple.com/us/app/streisand/id6450534064)
+        - для Android: [v2RayTun](https://play.google.com/store/apps/details?id=com.v2raytun.android), [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
+        - для Linux: [NekoBox](https://github.com/MatsuriDayo/nekoray)
+        - Также можешь использовать клиент [Amnezia VPN](https://github.com/amnezia-vpn/amnezia-client/releases/latest), он поддерживает все протоколы.
+    2. Скопируй ссылку формата `vless://` и вставь её в клиент. Получить её можно, как и любые другие конфиги, через команду `/configs`
+    3. Пользуйся!
 
 ## Как получить доступ и конфигурации? У меня ничего нет в боте!
 
@@ -70,5 +71,5 @@ hide:
 
 ## У меня не работает VPN/работает нестабильно/есть вопросы...
 
-**Не стесняйся нам писать ❤️**
+**Не стесняйся нам писать 🩵**
 В случае возникновения любого рода вопросов, которых нет в FAQ -- пиши нам, и мы постараемся ответить как можно скорее.

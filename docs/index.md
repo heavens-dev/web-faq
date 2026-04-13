@@ -12,4 +12,5 @@ icon: lucide/book-open
 
 ## Разделы
 
+- [Heaven's Gate FAQ](faq.md)
 - [Canary FAQ](canary_faq.md)

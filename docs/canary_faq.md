@@ -2,6 +2,7 @@
 icon: lucide/waypoints
 hide:
     - navigation
+    - footer
 ---
 
 
