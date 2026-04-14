@@ -1,5 +1,35 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+  {{ super() }}
+  <script>
+    (function () {
+      try {
+        var scopePath = new URL("../..", window.location.href).pathname;
+        var storageKey = scopePath + ".__palette";
+        var rawPalette = window.localStorage.getItem(storageKey);
+        if (!rawPalette) {
+          return;
+        }
+
+        var parsedPalette = JSON.parse(rawPalette);
+        var hasValidIndex =
+          parsedPalette &&
+          typeof parsedPalette === "object" &&
+          typeof parsedPalette.index === "number" &&
+          isFinite(parsedPalette.index);
+
+        // Old palette payloads without `index` crash Material's runtime in some embedded browsers.
+        if (!hasValidIndex) {
+          window.localStorage.removeItem(storageKey);
+        }
+      } catch (_error) {
+        // Ignore storage access/parsing errors.
+      }
+    })();
+  </script>
+{% endblock %}
+
 {% block announce %}
   <a class="hg-announce" href="https://t.me/heavens_gate_canary_bot" aria-label="Heaven's Gate Canary уже доступен!">
     <span class="hg-announce__icon-wrap" aria-hidden="true">

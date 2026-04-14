@@ -158,3 +158,8 @@
     line-height: 1.25;
   }
 }
+
+/* Hide theme toggle in header (palette is managed automatically). */
+.md-header__option[data-md-component="palette"] {
+  display: none !important;
+}
