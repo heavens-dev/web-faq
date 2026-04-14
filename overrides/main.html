@@ -4,6 +4,31 @@
   {{ super() }}
   <script>
     (function () {
+      var KNOWN_PALETTES = [
+        { scheme: "default", primary: "light-blue", accent: "cyan", media: "none" },
+        { scheme: "slate", primary: "deep-orange", accent: "orange", media: "none" }
+      ];
+
+      function getPaletteIndex(color) {
+        if (!color || typeof color !== "object") {
+          return 0;
+        }
+
+        for (var i = 0; i < KNOWN_PALETTES.length; i++) {
+          var p = KNOWN_PALETTES[i];
+          if (
+            color.scheme === p.scheme &&
+            color.primary === p.primary &&
+            color.accent === p.accent &&
+            color.media === p.media
+          ) {
+            return i;
+          }
+        }
+
+        return color.scheme === "slate" ? 1 : 0;
+      }
+
       try {
         var scopePath = new URL("../..", window.location.href).pathname;
         var storageKey = scopePath + ".__palette";
@@ -19,12 +44,30 @@
           typeof parsedPalette.index === "number" &&
           isFinite(parsedPalette.index);
 
-        // Old palette payloads without `index` crash Material's runtime in some embedded browsers.
+        // Soft-migrate old payloads without `index` to prevent runtime errors.
         if (!hasValidIndex) {
-          window.localStorage.removeItem(storageKey);
+          if (parsedPalette && typeof parsedPalette === "object" && parsedPalette.color) {
+            parsedPalette.index = getPaletteIndex(parsedPalette.color);
+            window.localStorage.setItem(storageKey, JSON.stringify(parsedPalette));
+          } else {
+            window.localStorage.removeItem(storageKey);
+          }
         }
       } catch (_error) {
         // Ignore storage access/parsing errors.
+      }
+
+      // Firefox warns on getElementById("") in some inline scripts; guard that call.
+      var nativeGetElementById = Document.prototype.getElementById;
+      if (!Document.prototype.__hgSafeGetElementByIdPatched) {
+        Document.prototype.getElementById = function (id) {
+          if (id === "") {
+            return null;
+          }
+
+          return nativeGetElementById.call(this, id);
+        };
+        Document.prototype.__hgSafeGetElementByIdPatched = true;
       }
     })();
   </script>
