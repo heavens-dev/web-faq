@@ -9,7 +9,7 @@ hide:
 
 ## Как воспользоваться VPN?
 
-=== "AmneziaWG"
+=== ":amnezia: AmneziaWG"
 
     1. Скачай клиент Amnezia VPN с GitHub https://github.com/amnezia-vpn/amnezia-client/releases/latest (также доступно на Android и iOS), или облегчённый клиент на базе обычного WireGuard.
     - Для Windows: https://github.com/amnezia-vpn/amneziawg-windows-client/releases/latest
@@ -22,7 +22,7 @@ hide:
     4. ???
     5. Пользуйся!
 
-=== "XRay"
+=== ":xray: XRay"
 
     1. Скачай клиент, который поддерживает подключение по VLess
         - для Windows: [InvisibleMan-XRay](https://github.com/InvisibleManVPN/InvisibleMan-XRayClient), [NekoBox](https://github.com/MatsuriDayo/nekoray)
