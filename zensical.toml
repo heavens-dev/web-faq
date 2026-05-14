@@ -48,7 +48,9 @@ nav = [
   { "Heaven's Gate FAQ" = "faq.md" },
   { "Canary FAQ" = "canary_faq.md" },
   { "Дополнительно" = [
-      "additional/split_tunneling.md"
+      "additional/split_tunneling.md",
+      "additional/ipv6_nuances.md",
+      "additional/bug_reports.md"
   ]}
 ]
 
