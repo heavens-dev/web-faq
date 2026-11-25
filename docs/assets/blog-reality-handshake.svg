@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="290" viewBox="0 0 900 290">
+  <!-- Heaven's Gate blog: REALITY handshake, with and without post-quantum key share -->
+  <defs>
+    <marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#64c9ff"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#e0564f"/>
+    </marker>
+  </defs>
+
+  <text x="15" y="26" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#7d8e9b">Как сервер видит попытку подключения</text>
+
+  <text x="15" y="58" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#64c9ff">Ядро Xray или mihomo</text>
+
+  <rect x="15" y="68" width="195" height="58" rx="8" fill="#64c9ff" fill-opacity="0.08" stroke="#64c9ff"/>
+  <text x="112" y="92" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">Клиент на ядре</text>
+  <text x="112" y="110" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">Xray или mihomo</text>
+
+  <rect x="240" y="68" width="195" height="58" rx="8" fill="#64c9ff" fill-opacity="0.08" stroke="#64c9ff"/>
+  <text x="337" y="92" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">ClientHello с</text>
+  <text x="337" y="110" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">X25519MLKEM768</text>
+
+  <rect x="465" y="68" width="195" height="58" rx="8" fill="#64c9ff" fill-opacity="0.08" stroke="#64c9ff"/>
+  <text x="562" y="92" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">REALITY принимает</text>
+  <text x="562" y="110" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">хендшейк</text>
+
+  <rect x="690" y="68" width="195" height="58" rx="8" fill="#64c9ff" fill-opacity="0.08" stroke="#64c9ff"/>
+  <text x="787" y="92" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">Туннель поднят,</text>
+  <text x="787" y="110" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">всё работает</text>
+
+  <line x1="212" y1="97" x2="234" y2="97" stroke="#64c9ff" stroke-width="2" marker-end="url(#arr-blue)"/>
+  <line x1="437" y1="97" x2="459" y2="97" stroke="#64c9ff" stroke-width="2" marker-end="url(#arr-blue)"/>
+  <line x1="662" y1="97" x2="684" y2="97" stroke="#64c9ff" stroke-width="2" marker-end="url(#arr-blue)"/>
+
+  <text x="15" y="190" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#e0564f">Ядро sing-box</text>
+
+  <rect x="15" y="202" width="195" height="58" rx="8" fill="#e0564f" fill-opacity="0.08" stroke="#e0564f"/>
+  <text x="112" y="226" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">Клиент на ядре</text>
+  <text x="112" y="244" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">sing-box</text>
+
+  <rect x="240" y="202" width="195" height="58" rx="8" fill="#e0564f" fill-opacity="0.08" stroke="#e0564f"/>
+  <text x="337" y="226" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">ClientHello без</text>
+  <text x="337" y="244" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">X25519MLKEM768</text>
+
+  <rect x="465" y="202" width="195" height="58" rx="8" fill="#e0564f" fill-opacity="0.08" stroke="#e0564f"/>
+  <text x="562" y="226" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">REALITY отвергает</text>
+  <text x="562" y="244" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">хендшейк</text>
+
+  <rect x="690" y="202" width="195" height="58" rx="8" fill="#e0564f" fill-opacity="0.08" stroke="#e0564f"/>
+  <text x="787" y="226" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">Снаружи -- лендинг,</text>
+  <text x="787" y="244" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#8fa0ac" text-anchor="middle">клиенту -- ошибка</text>
+
+  <line x1="212" y1="231" x2="234" y2="231" stroke="#e0564f" stroke-width="2" marker-end="url(#arr-red)"/>
+  <line x1="437" y1="231" x2="459" y2="231" stroke="#e0564f" stroke-width="2" marker-end="url(#arr-red)"/>
+  <line x1="662" y1="231" x2="684" y2="231" stroke="#e0564f" stroke-width="2" marker-end="url(#arr-red)"/>
+</svg>

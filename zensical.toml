@@ -46,7 +46,7 @@ Copyright &copy; 2026 heavens-dev team
 # Read more: https://zensical.org/docs/setup/navigation/
 nav = [
   { "Heaven's Gate FAQ" = "faq.md" },
-  { "Canary FAQ" = "canary_faq.md" },
+  { "Блог" = ["blog/index.md"] },
   { "Дополнительно" = [
       "additional/split_tunneling.md",
       "additional/ipv6_nuances.md",
@@ -259,7 +259,7 @@ features = [
 # option in the "theme" subsection. The logo must be a relative path to a file
 # in your "docs_dir", e.g., to use `docs/assets/logo.png` you would set:
 # ----------------------------------------------------------------------------
-logo = "assets/logo-skyblue.svg"
+logo = "assets/angel-wing-logo-skyblue.svg"
 
 # ----------------------------------------------------------------------------
 # If you don't have a dedicated project logo, you can use a built-in icon from
@@ -307,6 +307,15 @@ primary = "deep orange"
 accent = "orange"
 
 # ----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
+# Blog plugin: turns the "blog" directory into a paginated view of posts.
+# Posts live in docs/blog/posts, the entry point is docs/blog/index.md.
+#
+# Read more: https://zensical.org/docs/setup/blog/
+# ----------------------------------------------------------------------------
+[project.plugins.blog]
+
+# ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
 #[[project.extra.social]]
@@ -318,6 +327,10 @@ accent = "orange"
 [project.markdown_extensions.pymdownx.superfences]
 [project.markdown_extensions.pymdownx.tabbed]
 alternate_style = true
+
+# Strikethrough (~~text~~) and subscript (~text~):
+# https://zensical.org/docs/authoring/formatting/#strikethrough
+[project.markdown_extensions.pymdownx.tilde]
 
 [project.markdown_extensions.pymdownx.emoji]
 emoji_index = "zensical.extensions.emoji.twemoji"
